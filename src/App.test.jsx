@@ -1,5 +1,6 @@
 import { describe, expect, test, it } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import App from "./App";
 
 test("demo", () => {
@@ -14,5 +15,12 @@ describe("App Componente", () => {
         expect(screen.getByText('Vite + React')).toBeInTheDocument(); // Verificando se o texto está no componente renderizado
     })
 
-    it('Deveria contar quando clicar no botão')
+    // Testando o button de forma assincrona //
+    it('Deveria contar quando clicar no botão', async () => {
+        render(<App />)
+        const button = screen.getByRole('button', { name: "count is 0"});
+        await userEvent.click(button) // Esperando o resultado do estado do botão mudar //
+
+        expect(screen.getByText('count is 1')).toBeInTheDocument()
+    })
 })
