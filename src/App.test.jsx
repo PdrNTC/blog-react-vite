@@ -12,15 +12,15 @@ test("demo", () => {
 describe("App Componente", () => {
     it('should render the tittle', () => {
         render(<App />) // Renderizando a tela do App
-        expect(screen.getByText('Vite + React')).toBeInTheDocument(); // Verificando se o texto está no componente renderizado
+        expect(screen.getByText('Bem Vindo ao Blog Commitando!')).toBeInTheDocument(); // Verificando se o texto está no componente renderizado
     })
 
     // Testando o button de forma assincrona //
-    it('Deveria contar quando clicar no botão', async () => {
-        render(<App />)
-        const button = screen.getByRole('button', { name: "count is 0"});
-        await userEvent.click(button) // Esperando o resultado do estado do botão mudar //
+    // it('Deveria contar quando clicar no botão', async () => {
+    //     render(<App />)
+    //     const button = screen.getByRole('button', { name: "count is 0"});
+    //     await userEvent.click(button) // Esperando o resultado do estado do botão mudar //
 
-        expect(screen.getByText('count is 1')).toBeInTheDocument()
-    })
+    //     expect(screen.getByText('count is 1')).toBeInTheDocument()
+    // })
 })
