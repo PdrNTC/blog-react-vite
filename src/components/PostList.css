@@ -1,0 +1,18 @@
+.post-list-container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    gap: 24px;
+}
+
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #E8E8E8;
+    color: #CCC;
+    font-size: 0.875rem;
+}
